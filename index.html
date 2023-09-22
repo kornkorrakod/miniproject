@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirt Shop</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+   
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="./img/logo.jpg" class="logonav">
+            </a>
+
+            <div class="nav-cart">
+                <p class="nav-cart-name">Buy</p>
+                <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartnumber" class="cartnumber" style="display: none;">
+                        3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="sidebar">
+          <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search Product">
+          <a onclick="searchproduct('all')" class="sidebar-items"> 
+           All Product
+          </a>
+          <a onclick="searchproduct('women')" class="sidebar-items">  
+           Women
+          </a>
+          <a onclick="searchproduct('men')" class="sidebar-items">
+           Men
+          </a>
+          <a onclick="searchproduct('kids')" class="sidebar-items"> 
+           Kids
+          </a>
+        </div>
+      <div id="productlist" class="product">
+         
+      </div>
+   </div>
+
+      <div id="modalDesc" class="modal"style="display:none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+        <h2>Detail</h2>
+        <br>
+        <div class="modaldesc-content">
+            <img  id="mdd-img" class=modaldec-img src="https://images.unsplash.com/photo-1526925712774-2833a7ecd0d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1574&q=80" alt="">
+            <div class="modaldesc-detail">
+                <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+                <p id="mdd-price" style="font-size: 1.2vw;"> 2200 THB</p>
+                <br>
+                <P id="mdd-desc" style="color: #adadad;">Lorem ipsum dolor sit amet consectetur adipisicing  eius aspernatur sed et quos quibusdam, quis ipsam possimus delectus iure corporis provident amet voluptates suscipit, optio tempora! Est natus eveniet doloremque sunt ea recusandae saepe, aspernatur non quod enim accusamus exercitationem consectetur dolores!</P>
+                <br>
+                <div class="btn-control">
+                    <button onclick="closeModal()" class="btn">
+                        Close
+                    </button>
+                    <button  onclick="addtocart()" class="btn btn-buy">
+                        ADD to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      
+      <div id="modalCart" class="modal"style="display:none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+        <h2>My cart</h2>
+        <br>
+        <div id="mycart" class="cartlist">
+
+            
+        </div>
+        <div class="btn-control">
+          <button onclick="closeModal()" class="btn">
+            Cancel
+          </button>
+          <button onclick="buynow()" class="btn btn-buy">
+            Buy
+          </button>
+        </div>
+      </div>
+
+</body>
+</html>
